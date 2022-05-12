@@ -13,6 +13,8 @@ use PDF;
 use Webklex\PDFMerger\Facades\PDFMergerFacade as PDFMerger;
 use ZipArchive;
 use Illuminate\Support\Facades\File;
+use App\Models\RawMark;
+use Illuminate\Support\Facades\Log;
 
 class DownloadController extends Controller
 {
@@ -351,53 +353,14 @@ class DownloadController extends Controller
 
 
     public function report_mark(Request $request)
-    {
-        dd($request);
-        $this->ajax_verify($request);
-        $rules = [
-            'name' => ['required', 'string', 'max:150'],
-            'document' => ['nullable', 'mimes:pdf']
-        ];
-
-        if (!$adr->is_common_adr) {
-            $rules['number'] = ['required', 'string', 'max:10', Rule::unique('child_copy_adrs')->where(function ($query) use ($request, $adr) {
-                return $query->where([
-                    'parent_adr_id' => $adr->parent_id,
-                    'name' => $request->name
-                ])->where('id', '!=', $adr->id);
-            })];
-        }
-
-        $validator = Validator::make($request->all(), $rules);
-
-        if ($validator->fails()) {
-            return $this->ajax_validate($validator->messages());
-        }
-
-        $data = $request->all();
-        $this->format_adr_data($data);
-
+    {      
        
         try {
-
-            if ($data['is_new_version']) {
-
-                $new_child_copy = $this->duplicate_child_copy($adr->child_copy, true);
-                $new_adr = $new_child_copy->adrs()->firstWhere('number', $data['number']);
-
-                $this->upload_extra_documents($request, $data, $new_adr->id);
-
-                $new_adr->update($data);
-                $this->change_version_adr($adr->child_copy, $new_child_copy, $adr, $new_adr);
-                $adr = $new_adr;
-
-            } else {
-                $this->upload_extra_documents($request, $data, $adr->id);
-                $adr->update($data);
-            }
-
-            return $this->ajax_msg('success','', '', "admin/child-copy/$adr->child_copy_id/edit?tab=adrs");
-
+            $RawMark = New RawMark;
+            $RawMark->raw_id = auth()->user()->id;
+            $RawMark->report_id = $request->report_id;
+            $RawMark->content = $request->contentdiv;
+            $RawMark->save();
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             dd('Unable to update the ADR. Please contact your System Administrator');

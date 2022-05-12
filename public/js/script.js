@@ -35,6 +35,7 @@ $(function () {
             a = t.find('[type="submit"]'),
             o = t.data("callback"),
             c = t.data("callfront");
+            
         void 0 !== c && window[c](t), loadingButton(a), n.show(), $.ajax({
             cache: !1,
             method: r,
@@ -42,6 +43,48 @@ $(function () {
             contentType: !1,
             processData: !1,
             data: "GET" === r ? t.serialize() : new FormData(this),
+            timeout: 2e4
+        }).done(function(e) {
+            let j = 0;
+            void 0 !== e.status ? "validation" === e.status ? $.each(e.data, function(e, n) {
+                t.find('[name*="' + e + '"]').addClass("is-invalid").closest("div.form-group").find("div.feedback").addClass("invalid-feedback").text(n).show();
+                if (0 === j) {
+                    t.find('[name*="' + e + '"]').focus();
+                    j=1;
+                }
+            }) : (void 0 !== e.msg && notify(e.status, e.msg, "'undefined'" !== e.redirect ? "false" : "true"), void 0 !== e.redirect && setTimeout(function() {
+                redirect(APP_URL + e.redirect)
+            }, 500), void 0 !== o && window[o](e), globalChangesCount = 0) : notify("error", "We have encountered an error. Please contact your System Administrator")
+        }).fail(function(e, t) {
+            handler(e, t)
+        }).always(function() {
+            a.removeAttr("disabled"), a.html(a.data("original-text")), n.hide(), t.closest(".drawer").animate({
+                scrollTop: t.offset().top
+            }, 2e3);
+        })
+    })
+
+    $("body").on("submit", "form.rawformajax", function(e) {
+        e.preventDefault();
+        let t = $(this);
+        let doc = $('.content').html();
+        $('#contentdiv').val(doc);
+        console.log(doc);
+        t.find(".invalid-feedback").removeClass("invalid-feedback").text(""), t.find(".is-invalid").removeClass("is-invalid");
+        let n = t.children(".loading"),
+            i = t.attr("action"),
+            r = t.attr("method"),
+            a = t.find('[type="submit"]'),
+            o = t.data("callback"),
+            c = t.data("callfront");
+            
+        void 0 !== c && window[c](t), loadingButton(a), n.show(), $.ajax({
+            cache: !1,
+            method: 'POST',
+            url: APP_URL + i,
+            contentType: !1,
+            processData: !1,
+            data: new FormData(this),
             timeout: 2e4
         }).done(function(e) {
             let j = 0;

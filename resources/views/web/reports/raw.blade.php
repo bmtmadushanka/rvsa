@@ -284,8 +284,10 @@
 
 <body class="document" style="background-color:#f5f5f5">
     <div class="content" style="margin:50px;">
-    <form class="form ajax scrollable" method="POST" action="report/report-mark/{{$report->id}}" data-callback="callback_create_master">
+    <form class="form rawformajax scrollable" method="POST" action="report/report-mark/{{$report->id}}" data-callback="callback_create_master">
         @csrf
+        <textarea id="contentdiv" name="contentdiv" style="display:none;"> </textarea>
+        <input type="hidden" name="report_id" value="{{$report->id}}">
         <div class="card">
             <div class="card-body" style="margin:50px;">
             @if ($has_headers)
@@ -440,7 +442,13 @@
     $( document ).ready(function() {
         $('<span class="checkbox checkbox-inline"> </span>').replaceWith( '<span><input type="checkbox">&nbsp;</span>');
         $('.avvcheck').attr('disabled',true);
-    
+        $(document).on("click", ".rawcheck", function() {
+            if (this.checked) {
+                this.setAttribute("checked", "checked");
+            } else {
+                this.removeAttribute("checked");
+            }
+        });
         $('body').on('click', '.btn-update-child-adr', function() {
 
         let $$ = $(this);
@@ -451,20 +459,15 @@
 
         if (form.valid()) {
 
-            if (form.find('input[name="is_new_version"]').length) {
+            Swal.fire(confirmSwal('Do you want to do save the changes as a new version?', true)).then((result) => {
+                if (result.value) {
+                    form.find('input[name="is_new_version"]').val(1);
+                }
+                if (typeof result.value != 'undefined') {
+                    $$.next().click();
+                }
+            });
 
-                Swal.fire(confirmSwal('Do you want to do save the changes as a new version?', true)).then((result) => {
-                    if (result.value) {
-                        form.find('input[name="is_new_version"]').val(1);
-                    }
-                    if (typeof result.value != 'undefined') {
-                        $$.next().click();
-                    }
-                });
-
-            } else {
-                $$.next().click();
-            }
         }
 
         setTimeout(function() {

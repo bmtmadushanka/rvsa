@@ -18,18 +18,28 @@
             <td class="align-middle">{{ $report->vin }}</td>
             <td class="align-middle">{!! $report->child->description !!}</td>
             <td class="text-center text-nowrap">
-                <a class="btn btn-warning" href="/report/{{ $report->id }}/mark/report" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Mark</span></a>
-                <a class="btn btn-success" href="/report/{{ $report->id }}/download/report" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Model Report</span></a>
-                <a class="btn btn-success" href="/report/{{ $report->id }}/download/consumer-notice" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span> Consumer Information Notice</span></a>
-                @ifBackEnd
-                <a class="dropdown-item" href="/report/{{ $report->id }}/download/sticker" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Identification Label</span></a>
-                @if ($report->noise_test)
-                <a class="dropdown-item" href="/report/{{ $report->id }}/download/noise-test" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Noise Test Report</span></a>
-                @endif
-                @endIfBackEnd   
-                @ifBackEnd
-                <a class="dropdown-item btn-edit-noise-test-report" data-id="{{ $report->id }}" href="javascript:void(0)"><em class="icon ni ni-{{ $report->noise_test ? 'pen' : 'plus' }} pos-rel" style="bottom: 2px"></em><span>Noise Test Report</span></a>
-                @endIfBackEnd      
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
+                    <div class="dropdown-menu" style="">
+                        <>
+                        <ul class="link-list-opt no-bdr">
+                            <li><a class="dropdown-item" href="/report/{{ $report->id }}/download/report" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Model Report</span></a></li>
+                            <li><a class="dropdown-item" href="/report/{{ $report->id }}/mark/report" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Mark</span></a></li>
+                            <li><a class="dropdown-item" href="/report/{{ $report->id }}/download/consumer-notice" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span> Consumer Information Notice</span></a></li>
+                            @ifBackEnd
+                            <li><a class="dropdown-item" href="/report/{{ $report->id }}/download/sticker" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Identification Label</span></a></li>
+                            @if ($report->noise_test)
+                            <li><a class="dropdown-item" href="/report/{{ $report->id }}/download/noise-test" target="_blank"><em class="icon ni ni-download pos-rel" style="bottom: 2px"></em><span>Noise Test Report</span></a></li>
+                            @endif
+                            @endIfBackEnd
+                        </ul>
+                        @ifBackEnd
+                        <ul class="link-list-opt border-top mt-2">
+                            <li><a class="dropdown-item btn-edit-noise-test-report" data-id="{{ $report->id }}" href="javascript:void(0)"><em class="icon ni ni-{{ $report->noise_test ? 'pen' : 'plus' }} pos-rel" style="bottom: 2px"></em><span>Noise Test Report</span></a></li>
+                        </ul>
+                        @endIfBackEnd
+                    </div>
+                </div>
             </td>
         </tr>
     @endforeach
