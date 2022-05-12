@@ -1,0 +1,97 @@
+#tinymce ul.tox-checklist > li {
+    font-weight: 600;
+}
+
+#tinymce ul.tox-checklist > li::before {
+    margin-left: 1.5em !important;
+    margin-top: 0;
+}
+
+#tinymce .text-left {
+    text-align: left !important;
+}
+
+#tinymce .text-center {
+    text-align: center;
+}
+
+#tinymce .text-justify {
+    text-align: justify;
+}
+
+#tinymce .float-right {
+    float: right;
+}
+
+#tinymce .fw-bold{
+    font-weight: bold;
+}
+
+#tinymce table tr {
+    height: 40px
+}
+
+#tinymce table td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+#tinymce .mx-3 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#tinymce p {
+    margin: 0;
+}
+
+#tinymce .mb-2 {
+    margin-bottom: 10px;
+}
+
+#tinymce .mr-1 {
+    margin-right: 5px;
+}
+
+.mr-3 { margin-right: 15px }
+
+#tinymce .ml-75 {
+    margin-left: 100px;
+}
+
+#tinymce span.mr-3.d-inline-block {
+    display: inline-block;
+    position: relative;
+    /*width: 35px !important;*/
+    height: 16px;
+    /*margin-right: 0 !important;*/
+}
+
+#tinymce .checkbox {
+    margin-left: 5px;
+    margin-right: 15px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
+    position: absolute;
+    /*bottom: -2px*/
+}
+
+#tinymce .placeholder, .placeholder-empty {
+    background: #000;
+    color: #fff;
+    padding: 2px 8px;
+}
+
+body#tinymce  {
+    line-height: 1.5;
+}
+
+#tinymce table tr {
+    height: 24px;
+}
+
+/*p {margin: 0; padding: 0; text-indent: -28px;
+    padding-left: 28px;
+}*/

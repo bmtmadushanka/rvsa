@@ -1,0 +1,95 @@
+/* CUSTOM CSS FOR COURSES */
+@import url('main.min.css?t=1.1.1');
+
+.form-group.d-flex > div:first-child {
+    width: 130px;
+}
+
+.form-group.d-flex > div:first-child label {
+    margin-top: 8px;
+}
+
+#manage-fee-plan .form-group.d-flex > div:first-child {
+    width: 160px !important;
+}
+
+.table.vl-middle tbody tr td {
+    vertical-align: middle;
+}
+
+#modal-common {
+    z-index: 9999;
+}
+
+.modal-xl {
+    padding-left: 0px !important;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.modal-xl .modal-dialog {
+    /*display: flex; flex-direction: column; justify-content: center; min-height: 100vh;*/
+    max-width: 100%;
+    min-height: 100%;
+    margin: auto!important;
+}
+
+.modal-xl .modal-content {
+    border-radius: 0;
+}
+
+.accordion .card-header {
+    height: initial;
+}
+
+.content-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.content-separator::before,
+.content-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.content-separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.scrollable {
+    overflow: auto;
+    max-height: 100vh;
+}
+
+div#wrapper-cart {
+    padding-top: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+div#cart {
+    display: none;
+    position: absolute;
+    z-index: 555;
+    background: #f9f9f9;
+    top: 60px;
+    right: 0px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+div#overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 5
+}

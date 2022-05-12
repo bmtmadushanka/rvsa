@@ -1,0 +1,359 @@
+.nav-item-auth a {
+    color: #ddd;
+}
+
+.nav-item-auth a:hover {
+    color: #fff;
+}
+
+label.required::after {
+    content: "\002a";
+    color: red;
+    margin-left: 3px;
+    bottom: 2px;
+    position: relative
+}
+
+.border-outer-none {
+    border-style: hidden
+}
+
+table thead tr {
+    background: #f5f5f5;
+}
+
+
+#dropdown-menu-user {
+    left: -10px !important;
+    max-width: 350px !important;
+    width: 350px;
+}
+
+.btn-sm {
+    padding: 5px;
+}
+
+button {
+    justify-content: center;
+}
+
+.card-icon {
+    max-width: 90px;
+    margin: 0 auto;
+}
+
+.border-bottom-dashed {
+    border: none;
+    border-bottom: 1px dashed;
+}
+
+.content-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.content-separator::before,
+.content-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.content-separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.form-control:focus, div.dataTables_wrapper div.dataTables_filter input:focus, .dual-listbox .dual-listbox__search:focus {
+    box-shadow: none
+}
+
+/*.wrapper-table-notifications .pagination {
+    float:right;
+}*/
+
+.fs-7 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0 !important;
+}
+
+.new-message {
+    position: fixed;
+    width: 500px;
+    right: 1px;
+    bottom: 1px;
+    border: 1px solid #dfdfdf;
+    border: 1px solid #e5e9f2;
+    box-shadow: 0 3px 12px 1px rgb(44 55 130 / 15%);
+    z-index: 9999;
+}
+
+.feedback {
+    height: 15px;
+    margin-top: 5px;
+}
+
+#btn-close-chat-window {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+}
+
+.btn-outline-secondary:hover, .btn-outline-danger:hover {
+    color: #fff !important;
+}
+
+/* drawers */
+.drawer {
+    background: #fff;
+    -webkit-box-shadow: -5px 0 5px -5px #aaa;
+    box-shadow: -5px 0 5px -5px #aaa;
+    /* overflow-y:auto; */
+    overflow-y: auto;
+    z-index: 9998;
+    padding: 15px;
+    right: -5000px;
+}
+
+#drawerSm {
+    z-index: 1024;
+    max-width: 500px;
+    min-width: 500px
+}
+
+#drawerMd {
+    z-index: 1023;
+    max-width: 940px;
+    min-width: 500px
+}
+
+#drawerLg {
+    z-index: 1022;
+}
+
+#drawerXl {
+    z-index: 1021;
+    max-width: 1400px;
+}
+
+.drawer-container-title {
+    margin: 25px 0
+}
+/* end drawers */
+
+div.loading::before {
+    position: relative;
+    top: 0.9rem;
+    content: url(/images/loading.gif)
+}
+
+div.loading {
+    content: "Loading";
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 50px
+}
+
+.form-control.is-invalid {
+    background: none;
+}
+
+.selectize-control.plugin-remove_button .remove-single {
+    right: 3px !important;
+    top: -2px !important;
+}
+
+.wrapper-table-notifications {
+    min-height: 800px;
+    border-left: 1px solid #e5e9f2;
+}
+
+#card-discussion .wrapper-table-notifications {
+    border: 1px solid #e5e9f2;
+}
+
+.wrapper-table-notifications thead {
+    display: none;
+}
+
+div.dataTables_filter, div.dataTables_length, div.dataTables_info, div.dataTables_paginate, div#DataTables_Table_0_filter {
+    margin: 1rem !important;
+}
+
+.wrapper-table-notifications:not(.filter-right) div.dataTables_filter {
+    float: left;
+}
+
+#table-discussion .dataTables_wrapper {
+    position: relative;
+    margin-top: -30px
+}
+
+#table-discussion:not(.float-right) div.dataTables_filter {
+    margin-bottom: 1.5rem !important;
+}
+
+.wrapper-table-notifications.filter-right div.dataTables_filter {
+    float:right;
+}
+
+.wrapper-table-notifications div.dataTables_filter label {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper-table-notifications div.dataTables_filter input {
+    margin-left: 10px !important;
+}
+
+.wrapper-table-notifications div.dataTables_length {
+    float:right;
+}
+
+.wrapper-table-notifications div.dataTables_length select {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.wrapper-table-notifications div.dataTables_info {
+    margin-top: 20px !important;
+    float:right;
+}
+
+.wrapper-table-notifications .dataTables_paginate {
+    margin-top: 20px !important;
+}
+
+.nk-ibx {
+    max-height: 100%;
+}
+
+.nk-ibx-aside {
+    border-right: none;
+}
+
+.notification-count {
+    color: #fff;
+    background: #ff4747;
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    border-radius: 50%;
+    padding: 6px 9px;
+    font-size: 14px;
+    top: 10px;
+}
+
+.dataTables_scrollHead {
+    display: none;
+}
+
+.dataTables_scrollBody {
+    width: 101.5%!important;
+}
+
+#table-discussion.px-0 .dataTables_scrollBody {
+    width: 101%!important;
+}
+
+.nk-ibx-item.is-unread {
+    background: rgba(245,246,250);
+}
+
+.nk-ibx-link-custom {
+    color: inherit;
+    width: 90%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+.wrapper-table-notifications .nk-ibx-item {
+    flex-wrap: wrap;
+    padding: 1rem 0.5rem;
+}
+
+.custom-form-inline div.form-group.d-flex .form-label:first-child {
+    width: 200px;
+    justify-content: start;
+    margin-top: 8px;
+}
+
+.ibx-actions-hidden {
+    top: -25px;
+    padding: 10px 20px 20px;
+}
+
+.nk-ibx-item, .ibx-actions, .ibx-actions-hidden {
+    transition: none;
+}
+
+.ibx-actions-hidden, .ibx-actions-hidden:hover {
+    background: #f9f9f9 !important;
+}
+
+.nk-ibx-item.is-unread:hover, .nk-ibx-item.active {
+    background: transparent !important;
+}
+
+.nk-ibx-item.is-unread:hover .ibx-actions-hidden {
+    background: #fff !important;
+}
+
+#table-discussion .nk-ibx-item:not(.no-hover):hover {
+    background: #f9f9f9;
+}
+
+.swal2-styled {
+    margin: 0 .25rem;
+    font-size: 0.9rem !important;
+}
+
+.swal2-icon {
+    margin: -0.5rem auto 1rem;
+}
+
+.swal2-title {
+    margin: 0 0 1em;
+}
+
+#swal2-title {
+    padding: 0em 1em 0;
+}
+
+#swal2-html-container {
+    font-size: 1rem !important;
+    margin: 1.5rem 1.6em 1rem !important;
+}
+
+ins, .bg-light-green {
+    background: #d4edda;
+    color: #155724;
+}
+
+del, .bg-light-red {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+del, ins {
+    padding: 0 5px;
+    margin: 0 2px;
+    text-decoration: none;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+@media (max-width: 767.98px) {
+    .nk-ibx-item-fluid {
+        margin-left: 10px !important;
+    }
+}

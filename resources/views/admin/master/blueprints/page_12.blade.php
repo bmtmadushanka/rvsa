@@ -1,0 +1,5 @@
+<div class="page-content text-justify">
+    <h2>DAMAGE & CORROSION CHECKS</h2>
+    <h2>Primary Check - Body Alignment Evaluation:</h2>
+    <p>This <b>primary</b> body alignment evaluation check should be carried-out prior to doing <b>any other</b> damage or corrosion inspections. A rejection at this point will mean that the vehicle is not suitable for registration within Australia. An approved measuring tool which accurately centers into selected jigging holes (as shown in the specific marked up photos below) & in conjunction with a digital level must be used to verify these dimensions. Alternately, other types of professional measuring tools or systems are acceptable. Bolts may be removed from the datums holes as shown in the photos below to carry-out this function. In many cases, it may be necessary to remove trim covers or other vehicle components to gain access to these important jigging locations. Full explanatory details are provided with photographs to undertake this important task. All measurements are compulsory & they should be measured accurately.</p>
+</div>
